@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://OksanaJarosch.github.io/rent-a-camper/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
