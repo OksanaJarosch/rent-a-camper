@@ -9,11 +9,11 @@ const CatalogPage = lazy(() => import("pages/CatalogPage/CatalogPage.jsx"));
 const FavoritesPage = lazy(() => import("pages/FavoritesPage/FavoritesPage.jsx"));
 
 
-function App() {
+export default function App() {
 
   return (
     <>
-    <Suspense>
+    <Suspense fallback={<p>LOADING...</p>}>
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<HomePage />}></Route>
@@ -29,5 +29,3 @@ function App() {
     </>
   )
 }
-
-export default App
