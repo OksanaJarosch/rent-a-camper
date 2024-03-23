@@ -1,6 +1,9 @@
+import { HomeBackground } from "./HomePage.styled";
 
 export default function HomePage() {
     return (
-        <h1>Wellcome!</h1>
+        <HomeBackground>
+            <h1>Wellcome!</h1>
+        </HomeBackground>
     )
 }
