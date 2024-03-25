@@ -49,12 +49,27 @@ export const StyledNavLink = styled(NavLink)`
 `;
 
 export const StyledBurger = styled.button`
+    cursor: pointer;
     padding: 0;
     border: none;
     background: transparent;
 
     @media (min-width: ${theme.breakpoint.md}) {
-        justify-content: space-between;
+        display: none;
+    }
+`;
+
+export const BackdropMenu = styled.div`
+    width: 100vw;
+    height: 100vh;
+    background-color: ${theme.color.beige};
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    padding: 24px;
+
+    @media (min-width: ${theme.breakpoint.md}) {
         display: none;
     }
 `;
