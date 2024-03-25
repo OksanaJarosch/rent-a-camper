@@ -1,19 +1,35 @@
-import { Link, NavLink } from "react-router-dom"
 import sprite from "assets/sprite.svg"
-import { StyledMenu, StyledNav } from "./Menu.styled"
+import { StyledBurger, StyledLogo, StyledMenu, StyledNav, StyledNavLink } from "./Menu.styled"
+import { useState } from "react"
+import { theme } from "../../helpers/themes"
 
 export const Menu = () => {
+
+    const [isBackdrop, setIsBackdrop] = useState(false);
+
     return (
         <StyledMenu>
-            <Link to="/">
+            <StyledLogo to="/">
                 <svg width="32" height="32">
                     <use href={`${sprite}#van`}/>
                 </svg>
-            </Link>
+            </StyledLogo>
+
             <StyledNav>
-                <button><NavLink to="/catalog">Campers</NavLink></button>
-                <button><NavLink to="/favorites">Favorites</NavLink></button>
+                <StyledNavLink to="/catalog" activeClassName="active">Campers</StyledNavLink>
+                <StyledNavLink to="/favorites">Favorites</StyledNavLink>
             </StyledNav>
+
+            <StyledBurger>
+                <svg width="32" height="32" stroke={`${theme.color.dark}`} viewBox="0 0 32 32">
+                    {isBackdrop ? (
+                        <use href={`${sprite}#close-x`} />
+                        ) : (
+                        <use href={`${sprite}#menu-hamburger`} />
+                    )}
+                </svg>
+            </StyledBurger>
+            
         </StyledMenu>
     )
 }

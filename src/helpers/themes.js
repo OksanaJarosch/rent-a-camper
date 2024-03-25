@@ -16,5 +16,6 @@ export const theme = {
     border: {
         orange: "1px solid #E44848",
         grey: "1px solid #475467",
-    }
+    },
+    transition: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
 }

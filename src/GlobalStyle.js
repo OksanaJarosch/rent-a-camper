@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import "modern-normalize";
+import {theme} from "./helpers/themes";
 
 export const GlobalStyle = createGlobalStyle`
 body {
@@ -7,6 +8,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: ${theme.color.dark};
 }
 
 code {
@@ -33,5 +35,9 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+a {
+    text-decoration: none;
 }
 `;
