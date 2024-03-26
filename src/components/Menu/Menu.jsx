@@ -37,7 +37,7 @@ export const Menu = () => {
             </StyledBurger>
         </StyledMenu>
 
-        {isBackdrop && <MobileMenu/>}
+        {isBackdrop && <MobileMenu onClick={toggleBackdrop}/>}
         </>
     )
 }

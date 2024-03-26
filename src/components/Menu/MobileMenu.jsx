@@ -1,17 +1,17 @@
 import { StyledBtn } from "../../reusable/Reusable.styled";
 import { BackdropMenu, StyledNavLink } from "./Menu.styled";
 
-export const MobileMenu = () => {
+export const MobileMenu = ({onClick}) => {
     return (
         <BackdropMenu>
-            <StyledBtn>
-                <StyledNavLink to="/" activeClassName="active">Home</StyledNavLink>
+            <StyledBtn type="button">
+                <StyledNavLink to="/" activeClassName="active" onClick={onClick}>Home</StyledNavLink>
             </StyledBtn>
-            <StyledBtn>
-                <StyledNavLink to="/catalog" activeClassName="active">Campers</StyledNavLink>
+            <StyledBtn type="button">
+                <StyledNavLink to="/catalog" activeClassName="active" onClick={onClick}>Campers</StyledNavLink>
             </StyledBtn>
-            <StyledBtn>
-                <StyledNavLink to="/favorites" activeClassName="active">Favorites</StyledNavLink>
+            <StyledBtn type="button">
+                <StyledNavLink to="/favorites" activeClassName="active" onClick={onClick}>Favorites</StyledNavLink>
             </StyledBtn>
         </BackdropMenu>
     )
