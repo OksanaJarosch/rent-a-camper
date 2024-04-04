@@ -9,6 +9,7 @@ export const StyledMenu = styled.div`
     justify-content: end;
     align-items: center;
     width: 100%;
+    height: 85px;
     padding: 16px 32px;
 
     @media (min-width: ${theme.breakpoint.md}) {

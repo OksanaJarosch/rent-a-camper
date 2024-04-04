@@ -7,6 +7,7 @@ export const theme = {
         yellow: "#FFC531",
         lightGrey: "#F2F4F7",
         beige: "#F7F7F7",
+        white: "#FFF",
     },
     breakpoint: {
         sm: '375px',
@@ -16,6 +17,8 @@ export const theme = {
     border: {
         orange: "1px solid #E44848",
         grey: "1px solid #475467",
+        lightGrey: "1px solid rgba(16, 24, 40, 0.10)",
+        inputGrey: "1px solid rgba(16, 24, 40, 0.20)",
     },
     transition: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
 }

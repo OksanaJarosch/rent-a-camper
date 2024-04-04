@@ -1,9 +1,10 @@
+import { Container } from "../../reusable/Reusable.styled";
 import { HomeBackground } from "./HomePage.styled";
 
 export default function HomePage() {
     return (
         <HomeBackground>
-            <h1>Wellcome!</h1>
+            <Container>Wellcome</Container>
         </HomeBackground>
     )
 }
