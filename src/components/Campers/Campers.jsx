@@ -1,7 +1,25 @@
-import { Container, StyledOrangeBtn } from "../../reusable/Reusable.styled"
-import { CampersSection, Checkbox, Fieldset, FilterSection, Input, Label, LittleTittle, Location, Text } from "./Campers.styled"
+import { Container, StyledOrangeBtn } from "../../reusable/Reusable.styled";
+import { CustomCheckbox } from "../CustomCheckbox/CustomCheckbox";
+import { CampersSection, Fieldset, FilterSection, Input, Label, LittleTittle, Location, Text } from "./Campers.styled";
 
 export const Campers = () => {
+
+    const vehicleEquipment = [
+        {name: "airConditioner", label: "AC", icon: "clima"},
+        {name: "transmission", label: "Automatic", icon: "automatic"},
+        {name: "kitchen", label: "Kitchen", icon: "kitchen"},
+        {name: "TV", label: "TV", icon: "tv"},
+        {name: "bathroom", label: "Shower/WC", icon: "shower"},
+    ];
+
+    const handleCheckboxChange = () => {
+
+    };
+
+    const isChecked = () => {
+
+    };
+
     return (
         <Container>
             <FilterSection type="submit">
@@ -14,11 +32,19 @@ export const Campers = () => {
                     <Text>Filters</Text>
                     <LittleTittle>Vehicle equipment</LittleTittle>
                     <Fieldset>
-                        <Checkbox type="checkbox" name="equipment"/>
-                        <Checkbox type="checkbox" name="equipment"/>
-                        <Checkbox type="checkbox" name="equipment"/>
-                        <Checkbox type="checkbox" name="equipment"/>
-                        <Checkbox type="checkbox" name="equipment"/>
+                        {vehicleEquipment.map(item => {
+                            const {name, label, icon} = item;
+
+                            return (
+                            <CustomCheckbox 
+                                key={name} 
+                                label={label} 
+                                name={name} 
+                                icon={icon} 
+                                onChange={handleCheckboxChange}
+                                checked={isChecked(name)} />
+                            )
+                        })}
                     </Fieldset>
                 </div>
 

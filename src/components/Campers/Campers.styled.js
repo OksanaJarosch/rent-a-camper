@@ -69,4 +69,17 @@ export const Checkbox = styled.div`
     gap: 8px;
     border-radius: 10px;
     border: ${theme.border.inputGrey};
+    cursor: pointer;
+`
+
+export const HiddenCheckbox = styled.input`
+    opacity: 0;
+    position: absolute;
+`
+
+export const ChackboxLabel = styled.p`
+    color: ${theme.color.dark};
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
 `
