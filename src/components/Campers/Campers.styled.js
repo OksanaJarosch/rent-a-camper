@@ -64,11 +64,11 @@ export const Checkbox = styled.div`
     display: flex;
     flex-direction: column;
     height: 95px;
-    padding: 17px 18px;
+    width: 112px;
     align-items: center;
+    justify-content:center;
     gap: 8px;
     border-radius: 10px;
-    border: ${theme.border.inputGrey};
     cursor: pointer;
 `
 
