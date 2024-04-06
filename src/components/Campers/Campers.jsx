@@ -6,6 +6,7 @@ import { CampersSection, Fieldset, FilterSection, Input, Label, LittleTittle, Lo
 export const Campers = () => {
 
     const [selectedCheckbox, setSelectedCheckbox] = useState([]);
+    const [selectedRadio, setSelectedRadio] = useState(null);
 
     const vehicleEquipment = [
         {name: "airConditioner", label: "AC", icon: "clima"},
@@ -13,6 +14,12 @@ export const Campers = () => {
         {name: "kitchen", label: "Kitchen", icon: "kitchen"},
         {name: "TV", label: "TV", icon: "tv"},
         {name: "bathroom", label: "Shower/WC", icon: "shower"},
+    ];
+
+    const vehicleType = [
+        {name: "van", label: "Van", icon: "van"},
+        {name: "integrated", label: "Fully Integrated", icon: "fully"},
+        {name: "alcove", label: "Alcove", icon: "alcove"},
     ];
 
     const handleCheckboxChange = (name) => {
@@ -25,8 +32,22 @@ export const Campers = () => {
         })
     };
 
+    const handleRadioChange = (name) => {
+        setSelectedRadio(prev => {
+            if (prev === name){
+                return null;
+            } else {
+                return name;
+            }
+        })
+    };
+
     const isChecked = (name) => {
         return selectedCheckbox.includes(name);
+    };
+
+    const onRadio = (name) => {
+        return selectedRadio === name;
     };
 
     return (
@@ -51,7 +72,8 @@ export const Campers = () => {
                                 name={name} 
                                 icon={icon} 
                                 onChange={handleCheckboxChange}
-                                checked={isChecked(name)} />
+                                checked={isChecked(name)}
+                                type="checkbox" />
                             )
                         })}
                     </Fieldset>
@@ -60,9 +82,20 @@ export const Campers = () => {
                 <div>
                     <LittleTittle>Vehicle type</LittleTittle>
                     <Fieldset>
-                        <input type="radio" name="type"/>
-                        <input type="radio" name="type"/>
-                        <input type="radio" name="type"/>
+                        {vehicleType.map(item => {
+                            const {name, label, icon} = item;
+
+                            return (
+                            <CustomCheckbox 
+                                key={name} 
+                                label={label} 
+                                name={name} 
+                                icon={icon} 
+                                onChange={handleRadioChange}
+                                checked={onRadio(name)}
+                                type="radio" />
+                            )
+                        })}
                     </Fieldset>
                 </div>
 

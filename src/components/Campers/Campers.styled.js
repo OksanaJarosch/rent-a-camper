@@ -82,4 +82,5 @@ export const ChackboxLabel = styled.p`
     font-size: 16px;
     font-weight: 500;
     line-height: 1.25;
+    text-align: center;
 `
