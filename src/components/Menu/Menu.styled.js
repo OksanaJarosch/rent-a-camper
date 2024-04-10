@@ -14,6 +14,7 @@ export const StyledMenu = styled.div`
 
     @media (min-width: ${theme.breakpoint.md}) {
         justify-content: space-between;
+        padding: 16px 64px;
     }
 `;
 

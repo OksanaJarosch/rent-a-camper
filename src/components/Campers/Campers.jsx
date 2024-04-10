@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Container, StyledOrangeBtn } from "../../reusable/Reusable.styled";
+import { Container } from "../../reusable/Reusable.styled";
 import { CustomCheckbox } from "../CustomCheckbox/CustomCheckbox";
-import { CampersSection, Fieldset, FilterSection, Input, Label, LittleTittle, Location, Text } from "./Campers.styled";
+import { CampersSection, Fieldset, FilterSection, FiltersStyled, Input, Label, LittleTittle, Location, SearchBtn, Text } from "./Campers.styled";
+import campers from "../../campers.json";
+import { CampersItem } from "../CampersItem/CampersItem";
 
 export const Campers = () => {
 
@@ -58,7 +60,7 @@ export const Campers = () => {
                 <Input type="name" id="location" placeholder="Please enter location"/>
                 </Location>
 
-                <div>
+                <FiltersStyled>
                     <Text>Filters</Text>
                     <LittleTittle>Vehicle equipment</LittleTittle>
                     <Fieldset>
@@ -77,9 +79,9 @@ export const Campers = () => {
                             )
                         })}
                     </Fieldset>
-                </div>
+                </FiltersStyled>
 
-                <div>
+                <FiltersStyled>
                     <LittleTittle>Vehicle type</LittleTittle>
                     <Fieldset>
                         {vehicleType.map(item => {
@@ -97,12 +99,19 @@ export const Campers = () => {
                             )
                         })}
                     </Fieldset>
-                </div>
+                </FiltersStyled>
 
-                <StyledOrangeBtn>Search</StyledOrangeBtn>
+                <SearchBtn>Search</SearchBtn>
             </FilterSection>
 
-            <CampersSection>Right Section</CampersSection>
+            <CampersSection>
+                <ul>
+                    {campers.map(camper => {
+                        return <CampersItem key={camper._id}/>
+                    })}
+                </ul>
+                {/* <StyledBtn>Load more</StyledBtn> */}
+            </CampersSection>
         </Container>
     )
 }

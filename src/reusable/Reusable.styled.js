@@ -16,7 +16,7 @@ export const StyledOrangeBtn = styled.button`
 export const StyledBtn = styled.button`
     padding: 16px 32px;
     border-radius: 200px;
-    border: ${theme.border.grey};
+    border: ${theme.border.inputGrey};
     background: transparent;
     &:hover {
         border-color: ${theme.color.orange};

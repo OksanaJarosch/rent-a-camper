@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import { theme } from "../../helpers/themes";
+import { StyledOrangeBtn } from "../../reusable/Reusable.styled";
 
 export const FilterSection = styled.form`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
     width: 360px;
 `
 
 export const CampersSection = styled.section`
     width: 888px;
+`
+
+export const FiltersStyled = styled.section`
+    margin-top: 32px;
 `
 
 export const Location = styled.div`
@@ -83,4 +85,8 @@ export const ChackboxLabel = styled.p`
     font-weight: 500;
     line-height: 1.25;
     text-align: center;
+`
+
+export const SearchBtn = styled(StyledOrangeBtn)`
+    margin-top: 64px;
 `
