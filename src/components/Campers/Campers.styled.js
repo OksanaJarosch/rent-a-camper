@@ -7,7 +7,7 @@ export const FilterSection = styled.form`
 `
 
 export const CampersSection = styled.section`
-    width: 888px;
+    max-width: 888px;
 `
 
 export const FiltersStyled = styled.section`

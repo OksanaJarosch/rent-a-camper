@@ -25,6 +25,7 @@ export const StyledBtn = styled.button`
 
 export const Container = styled.div`
     display: flex;
+    justify-content: space-around;
     gap: 64px;
     padding: 150px 64px 100px 64px;
 `

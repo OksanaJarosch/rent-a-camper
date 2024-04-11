@@ -107,7 +107,7 @@ export const Campers = () => {
             <CampersSection>
                 <ul>
                     {campers.map(camper => {
-                        return <CampersItem key={camper._id}/>
+                        return <CampersItem key={camper._id} camper={camper}/>
                     })}
                 </ul>
                 {/* <StyledBtn>Load more</StyledBtn> */}
