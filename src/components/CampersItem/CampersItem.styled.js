@@ -47,3 +47,44 @@ export const Title = styled.h2`
     font-weight: 600;
     line-height: 1.25;
 `;
+
+export const FlexContainer = styled.div`
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+`;
+
+export const ShirtText = styled.p`
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #475467;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px; 
+`;
+
+export const Extra = styled.li`
+    color: ${theme.color.dark};
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    background: ${theme.color.lightGrey};
+    padding: 12px 18px;
+`;
+
+export const Extras = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+`;
+
+export const ExtraSvg = styled.svg`
+    margin-right: 8px;
+    stroke: ${theme.color.dark};
+    fill: transparent;
+`;
