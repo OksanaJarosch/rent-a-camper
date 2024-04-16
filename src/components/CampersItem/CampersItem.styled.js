@@ -85,6 +85,8 @@ export const Extras = styled.ul`
 
 export const ExtraSvg = styled.svg`
     margin-right: 8px;
-    stroke: ${theme.color.dark};
-    fill: transparent;
+    width: 20px;
+    height: 20px;;
+    stroke: ${props => props.reverseStyle ? "transparent" : theme.color.dark};
+    fill: ${props => props.reverseStyle ? theme.color.dark :"transparent"};
 `;

@@ -11,17 +11,17 @@ export const Campers = () => {
     const [selectedRadio, setSelectedRadio] = useState(null);
 
     const vehicleEquipment = [
-        {name: "airConditioner", label: "AC", icon: "clima"},
-        {name: "transmission", label: "Automatic", icon: "automatic"},
-        {name: "kitchen", label: "Kitchen", icon: "kitchen"},
-        {name: "TV", label: "TV", icon: "tv"},
-        {name: "bathroom", label: "Shower/WC", icon: "shower"},
+        {name: "airConditioner", label: "AC", icon: "clima", reverseStyle: true},
+        {name: "transmission", label: "Automatic", icon: "automatic", reverseStyle: false},
+        {name: "kitchen", label: "Kitchen", icon: "kitchen", reverseStyle: false},
+        {name: "TV", label: "TV", icon: "tv", reverseStyle: false},
+        {name: "bathroom", label: "Shower/WC", icon: "shower", reverseStyle: false},
     ];
 
     const vehicleType = [
-        {name: "van", label: "Van", icon: "van"},
-        {name: "integrated", label: "Fully Integrated", icon: "fully"},
-        {name: "alcove", label: "Alcove", icon: "alcove"},
+        {name: "van", label: "Van", icon: "van", reverseStyle: true},
+        {name: "integrated", label: "Fully Integrated", icon: "fully", reverseStyle: true},
+        {name: "alcove", label: "Alcove", icon: "alcove", reverseStyle: true},
     ];
 
     const handleCheckboxChange = (name) => {
@@ -65,7 +65,7 @@ export const Campers = () => {
                     <LittleTittle>Vehicle equipment</LittleTittle>
                     <Fieldset>
                         {vehicleEquipment.map(item => {
-                            const {name, label, icon} = item;
+                            const {name, label, icon, reverseStyle} = item;
 
                             return (
                             <CustomCheckbox 
@@ -75,7 +75,7 @@ export const Campers = () => {
                                 icon={icon} 
                                 onChange={handleCheckboxChange}
                                 checked={isChecked(name)}
-                                type="checkbox" />
+                                reverseStyle={reverseStyle}/>
                             )
                         })}
                     </Fieldset>
@@ -85,7 +85,7 @@ export const Campers = () => {
                     <LittleTittle>Vehicle type</LittleTittle>
                     <Fieldset>
                         {vehicleType.map(item => {
-                            const {name, label, icon} = item;
+                            const {name, label, icon, reverseStyle} = item;
 
                             return (
                             <CustomCheckbox 
@@ -95,7 +95,7 @@ export const Campers = () => {
                                 icon={icon} 
                                 onChange={handleRadioChange}
                                 checked={onRadio(name)}
-                                type="radio" />
+                                reverseStyle={reverseStyle} />
                             )
                         })}
                     </Fieldset>

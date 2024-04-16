@@ -1,24 +1,20 @@
 import { ChackboxLabel, Checkbox, HiddenCheckbox } from "../Campers/Campers.styled";
 import sprite from "assets/sprite.svg";
 import { theme } from "../../helpers/themes";
+import { StyledSvg } from "./CustomCheckbox.styled";
 
-export const CustomCheckbox = ({ label, name, icon, onChange, checked, type }) => {
+export const CustomCheckbox = ({ label, name, icon, onChange, checked, reverseStyle }) => {
 
     const checkboxBorder = {
         border: checked ? `${theme.border.orange}` : `${theme.border.inputGrey}`
     };
 
-    const svgStyle = {
-        stroke: type === "checkbox" ? `${theme.color.dark}` : "transparent",
-        fill: type === "checkbox" ? "transparent" : `${theme.color.dark}`
-    }
-
     return (
         <Checkbox style={checkboxBorder} onClick={() => onChange(name)}>
-            <HiddenCheckbox type={type} checked={checked} readOnly />
-            <svg width="32" height="32" style={svgStyle}>
+            <HiddenCheckbox checked={checked} readOnly />
+            <StyledSvg reverseStyle={reverseStyle}>
                 <use href={`${sprite}#${icon}`} alt={name} />
-            </svg>
+            </StyledSvg>
             <ChackboxLabel>{label}</ChackboxLabel>
         </Checkbox>
     )

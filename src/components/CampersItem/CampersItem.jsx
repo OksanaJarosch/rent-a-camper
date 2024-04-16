@@ -7,12 +7,12 @@ export const CampersItem = ({camper}) => {
     const {gallery, name, location, price, description, adults, engine, details, transmission} = camper;
 
     const camperExtras = [
-        {name: `${adults}`, label: `${adults} adults`, icon: "people"},
-        {name: `${transmission.authomatic}`, label: "Automatic", icon: "automatic"},
-        {name: `${engine}`, label: `${engine}`, icon: "fuel"},
-        {name: `${details.airConditioner}`, label: "AC", icon: "clima"},
-        {name: `${details.kitchen}`, label: "Kitchen", icon: "kitchen"},
-        {name: `${details.beds}`, label: `${details.beds} beds`, icon: "bed"},
+        {name: `${adults}`, label: `${adults} adults`, icon: "people", reverseStyle: true},
+        {name: `${transmission.authomatic}`, label: "Automatic", icon: "automatic", reverseStyle: false},
+        {name: `${engine}`, label: `${engine}`, icon: "fuel", reverseStyle: true},
+        {name: `${details.airConditioner}`, label: "AC", icon: "clima", reverseStyle: true},
+        {name: `${details.kitchen}`, label: "Kitchen", icon: "kitchen", reverseStyle: false},
+        {name: `${details.beds}`, label: `${details.beds} beds`, icon: "bed", reverseStyle: false},
     ];
 
     return (
@@ -40,12 +40,12 @@ export const CampersItem = ({camper}) => {
                 <ShirtText>{description}</ShirtText>
                 <Extras>
                     {camperExtras.map(extra => {
-                        const {name, label, icon} = extra;
+                        const {name, label, icon, reverseStyle} = extra;
 
                         return(
                             name &&
                             <Extra key={name}>
-                                <ExtraSvg width="20" height="20">
+                                <ExtraSvg reverseStyle={reverseStyle}>
                                     <use href={`${sprite}#${icon}`} alt={name} />
                                 </ExtraSvg>
                                 <span>{label}</span>
