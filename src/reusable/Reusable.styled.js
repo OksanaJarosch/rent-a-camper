@@ -8,6 +8,7 @@ export const StyledOrangeBtn = styled.button`
     border: none;
     background: ${theme.color.orange};
     color: ${theme.color.white};
+    cursor: pointer;
     &:hover {
         background: ${theme.color.orangeHover};
     }
@@ -18,6 +19,7 @@ export const StyledBtn = styled.button`
     border-radius: 200px;
     border: ${theme.border.inputGrey};
     background: transparent;
+    cursor: pointer;
     &:hover {
         border-color: ${theme.color.orange};
     }

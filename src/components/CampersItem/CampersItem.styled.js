@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../helpers/themes";
 
+
 export const CamperStyled = styled.li`
     display: flex;
     gap: 24px;
@@ -89,4 +90,28 @@ export const ExtraSvg = styled.svg`
     height: 20px;;
     stroke: ${props => props.reverseStyle ? "transparent" : theme.color.dark};
     fill: ${props => props.reverseStyle ? theme.color.dark :"transparent"};
+`;
+
+export const ReviewsLink = styled.a`
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color: ${theme.color.dark};
+    line-height: 1.5;
+    text-decoration-line: underline;
+    cursor: pointer;
+`;
+
+export const Location = styled.div`
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color: ${theme.color.dark};
+    line-height: 1.5;
+`;
+
+export const FavBtn = styled.button`
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 `;

@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { theme } from "../../helpers/themes";
 import { StyledOrangeBtn } from "../../reusable/Reusable.styled";
-import { AboutContainer, CamperStyled, Extra, ExtraSvg, Extras, FlexContainer, Picture, PictureContainer, PriceContainer, ShirtText, Title, TitleContainer } from "./CampersItem.styled";
+import { AboutContainer, CamperStyled, Extra, ExtraSvg, Extras, FavBtn, FlexContainer, Location, Picture, PictureContainer, PriceContainer, ReviewsLink, ShirtText, Title, TitleContainer } from "./CampersItem.styled";
 import sprite from "assets/sprite.svg";
 
 export const CampersItem = ({camper}) => {
-    const {gallery, name, location, price, description, adults, engine, details, transmission} = camper;
+    const {gallery, name, location, price, description, adults, engine, details, transmission, rating, reviews} = camper;
+
+    const [isFavorite, setIsFavorite] = useState(false);
 
     const camperExtras = [
         {name: `${adults}`, label: `${adults} adults`, icon: "people", reverseStyle: true},
@@ -14,6 +17,10 @@ export const CampersItem = ({camper}) => {
         {name: `${details.kitchen}`, label: "Kitchen", icon: "kitchen", reverseStyle: false},
         {name: `${details.beds}`, label: `${details.beds} beds`, icon: "bed", reverseStyle: false},
     ];
+
+    const handleFavorite = () => {
+        setIsFavorite(!isFavorite);
+    };
 
     return (
         <CamperStyled>
@@ -25,16 +32,32 @@ export const CampersItem = ({camper}) => {
                 <TitleContainer>
                     <Title>{name}</Title>
                     <PriceContainer>
-                        <Title>{price}</Title>
-                        <svg width="24" height="24">
-                            <use fill="transparent" stroke={`${theme.color.dark}`} href={`${sprite}#nofav`}/>
-                        </svg>
+                        <Title>€{price.toFixed(2)}</Title>
+                        <FavBtn onClick={handleFavorite}>
+                            <svg width="24" height="24">
+                                {isFavorite ? (
+                                    <use fill="transparent" stroke={`${theme.color.dark}`} href={`${sprite}#fav`}/>
+                                ) : (
+                                    <use fill="transparent" stroke={`${theme.color.dark}`} href={`${sprite}#nofav`}/>
+                                )}
+                            </svg>
+                        </FavBtn>
                     </PriceContainer>
                 </TitleContainer>
 
                 <FlexContainer>
-                    <a href="" >4.4(2 Reviews)</a>
-                    <p>{location}</p>
+                    <ReviewsLink href="" >
+                        <svg width="16" height="16">
+                            <use href={`${sprite}#star`}/>
+                        </svg>
+                        {rating}({reviews.length} Reviews)
+                    </ReviewsLink>
+                    <Location>
+                        <svg width="16" height="16" fill="transparent" stroke={`${theme.color.dark}`}>
+                            <use href={`${sprite}#map-pin`}/>
+                        </svg>
+                        {location}
+                    </Location>
                 </FlexContainer>
 
                 <ShirtText>{description}</ShirtText>

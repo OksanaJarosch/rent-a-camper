@@ -77,6 +77,7 @@ export const Checkbox = styled.div`
 export const HiddenCheckbox = styled.input`
     opacity: 0;
     position: absolute;
+    cursor: pointer;
 `
 
 export const ChackboxLabel = styled.p`
