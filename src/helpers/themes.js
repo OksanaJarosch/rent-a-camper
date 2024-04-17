@@ -8,6 +8,7 @@ export const theme = {
         lightGrey: "#F2F4F7",
         beige: "#F7F7F7",
         white: "#FFF",
+        transparentGrey: "rgba(255, 255, 255, 0.35);",
     },
     breakpoint: {
         sm: '375px',

@@ -1,10 +1,13 @@
+import { Welcome } from "../../components/Campers/Welcome/Welcome";
 import { Container } from "../../reusable/Reusable.styled";
 import { HomeBackground } from "./HomePage.styled";
 
 export default function HomePage() {
     return (
         <HomeBackground>
-            <Container>Wellcome</Container>
+            <Container>
+                <Welcome/>
+            </Container>
         </HomeBackground>
     )
 }

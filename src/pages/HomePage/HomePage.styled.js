@@ -3,7 +3,7 @@ import image from "assets/camper_optimized.webp";
 import retinaimage from "assets/camper_optimized_retina.webp";
 
 export const HomeBackground = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(${image});
     background-size: cover;
     background-position: center;
