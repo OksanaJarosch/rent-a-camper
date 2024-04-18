@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { theme } from "../../helpers/themes";
 import { StyledOrangeBtn } from "../../reusable/Reusable.styled";
 import { AboutContainer, CamperStyled, Extra, ExtraSvg, Extras, FavBtn, FlexContainer, Location, Picture, PictureContainer, PriceContainer, ReviewsLink, ShirtText, Title, TitleContainer } from "./CampersItem.styled";
 import sprite from "assets/sprite.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, deleteFavorite } from "../../redux/favorites/favoritesSlice";
+import { selectFavorites } from "../../redux/selectors";
+
 
 export const CampersItem = ({camper}) => {
     const {gallery, name, location, price, description, adults, engine, details, transmission, rating, reviews} = camper;
@@ -12,6 +14,11 @@ export const CampersItem = ({camper}) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
     const dispatch = useDispatch();
+    const fav = useSelector(selectFavorites);
+
+    useEffect (() => {
+        fav.includes(camper) && setIsFavorite(true);
+    }, [camper, fav]);
 
     const camperExtras = [
         {name: `${adults}`, label: `${adults} adults`, icon: "people", reverseStyle: true},
