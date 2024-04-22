@@ -1,4 +1,4 @@
-import { Welcome } from "../../components/Campers/Welcome/Welcome";
+import { Welcome } from "../../components/Welcome/Welcome";
 import { Container } from "../../reusable/Reusable.styled";
 import { HomeBackground } from "./HomePage.styled";
 

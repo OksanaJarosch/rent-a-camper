@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../../helpers/themes";
+import { theme } from "../../helpers/themes";
 
 
 export const WelcomeText = styled.div`

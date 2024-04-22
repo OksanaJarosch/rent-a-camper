@@ -4,11 +4,17 @@ import { CustomCheckbox } from "../CustomCheckbox/CustomCheckbox";
 import { CampersSection, Fieldset, FilterSection, FiltersStyled, Input, Label, LittleTittle, Location, SearchBtn, Text } from "./Campers.styled";
 import campers from "../../campers.json";
 import { CampersItem } from "../CampersItem/CampersItem";
+import { useDispatch, useSelector } from "react-redux";
+import { updateLocation } from "../../redux/filters/filterSlice";
+import { selectLocation } from "../../redux/selectors";
 
 export const Campers = () => {
 
     const [selectedCheckbox, setSelectedCheckbox] = useState([]);
     const [selectedRadio, setSelectedRadio] = useState(null);
+
+    const dispatch = useDispatch();
+    const locationFilter = useSelector(selectLocation);
 
     const vehicleEquipment = [
         {name: "airConditioner", label: "AC", icon: "clima", reverseStyle: true},
@@ -23,6 +29,19 @@ export const Campers = () => {
         {name: "integrated", label: "Fully Integrated", icon: "fully", reverseStyle: true},
         {name: "alcove", label: "Alcove", icon: "alcove", reverseStyle: true},
     ];
+
+    const getVisibleCampers = () => {
+        if (locationFilter === "") {
+            return campers;
+        } else {
+            const filtred = campers.filter(camper => {
+                return camper.location.toLocaleLowerCase().includes(locationFilter.toLocaleLowerCase());
+            });
+            return filtred;
+        }
+    };
+
+    const visibleCampers = getVisibleCampers();
 
     const handleCheckboxChange = (name) => {
         setSelectedCheckbox(prev => {
@@ -57,7 +76,7 @@ export const Campers = () => {
             <FilterSection type="submit">
                 <Location>
                 <Label for="location">Location</Label>
-                <Input type="name" id="location" placeholder="Please enter location"/>
+                <Input type="name" id="location" placeholder="Please enter location" onChange={evt => dispatch(updateLocation(evt.target.value))}/>
                 </Location>
 
                 <FiltersStyled>
@@ -106,7 +125,7 @@ export const Campers = () => {
 
             <CampersSection>
                 <ul>
-                    {campers.map(camper => {
+                    {visibleCampers.map(camper => {
                         return <CampersItem key={camper._id} camper={camper}/>
                     })}
                 </ul>
