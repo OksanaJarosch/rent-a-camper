@@ -3,18 +3,13 @@ import { Container } from "../../reusable/Reusable.styled";
 import { CustomCheckbox } from "../CustomCheckbox/CustomCheckbox";
 import { CampersSection, Fieldset, FilterSection, FiltersStyled, Input, Label, LittleTittle, Location, SearchBtn, Text } from "./Campers.styled";
 import campers from "../../campers.json";
-import { CampersItem } from "../CampersItem/CampersItem";
-import { useDispatch, useSelector } from "react-redux";
-import { updateLocation } from "../../redux/filters/filterSlice";
-import { selectLocation } from "../../redux/selectors";
+import { CampersItem } from "../CampersItem/CampersItem"
 
 export const Campers = () => {
 
     const [selectedCheckbox, setSelectedCheckbox] = useState([]);
     const [selectedRadio, setSelectedRadio] = useState(null);
-
-    const dispatch = useDispatch();
-    const locationFilter = useSelector(selectLocation);
+    const [locationFilter, setLocationFilter] = useState("");
 
     const vehicleEquipment = [
         {name: "airConditioner", label: "AC", icon: "clima", reverseStyle: true},
@@ -25,20 +20,41 @@ export const Campers = () => {
     ];
 
     const vehicleType = [
-        {name: "van", label: "Van", icon: "van", reverseStyle: true},
-        {name: "integrated", label: "Fully Integrated", icon: "fully", reverseStyle: true},
+        {name: "panelTruck", label: "Van", icon: "van", reverseStyle: true},
+        {name: "fullyIntegrated", label: "Fully Integrated", icon: "fully", reverseStyle: true},
         {name: "alcove", label: "Alcove", icon: "alcove", reverseStyle: true},
     ];
 
-    const getVisibleCampers = () => {
-        if (locationFilter === "") {
+    const filterLocation = (campers, location) => {
+        if (location === "") {
             return campers;
-        } else {
-            const filtred = campers.filter(camper => {
-                return camper.location.toLocaleLowerCase().includes(locationFilter.toLocaleLowerCase());
-            });
-            return filtred;
         }
+        return campers.filter(camper => camper.location.toLocaleLowerCase().includes(location.toLocaleLowerCase()));
+    };
+
+    const filterType = (campers, type) => {
+        if (type === null) {
+            return campers;
+        }
+        return campers.filter(camper => camper.form === type);
+    };
+
+    // const filterEquipment = () => {
+
+    // };
+
+    const getVisibleCampers = () => {
+        let filteredCampers = campers;
+
+        filteredCampers = filterLocation(filteredCampers, locationFilter);
+        filteredCampers = filterType(filteredCampers, selectedRadio);
+        // filteredCampers = filterEquipment(filteredCampers, selectedCheckbox);
+
+        return filteredCampers;
+    };
+
+    const updateLocation = value => {
+        setLocationFilter(value);
     };
 
     const visibleCampers = getVisibleCampers();
@@ -54,6 +70,7 @@ export const Campers = () => {
     };
 
     const handleRadioChange = (name) => {
+        console.log(name);
         setSelectedRadio(prev => {
             if (prev === name){
                 return null;
@@ -76,7 +93,7 @@ export const Campers = () => {
             <FilterSection type="submit">
                 <Location>
                 <Label for="location">Location</Label>
-                <Input type="name" id="location" placeholder="Please enter location" onChange={evt => dispatch(updateLocation(evt.target.value))}/>
+                <Input type="name" id="location" placeholder="Please enter location" onChange={evt => updateLocation(evt.target.value)}/>
                 </Location>
 
                 <FiltersStyled>
@@ -92,7 +109,7 @@ export const Campers = () => {
                                 label={label} 
                                 name={name} 
                                 icon={icon} 
-                                onChange={handleCheckboxChange}
+                                onChange={() => handleCheckboxChange(name)}
                                 checked={isChecked(name)}
                                 reverseStyle={reverseStyle}/>
                             )
@@ -112,7 +129,7 @@ export const Campers = () => {
                                 label={label} 
                                 name={name} 
                                 icon={icon} 
-                                onChange={handleRadioChange}
+                                onChange={() => handleRadioChange(name)}
                                 checked={onRadio(name)}
                                 reverseStyle={reverseStyle} />
                             )
