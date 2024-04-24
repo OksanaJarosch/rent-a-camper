@@ -21,12 +21,14 @@ export const CampersItem = ({camper}) => {
     }, [camper, fav]);
 
     const camperExtras = [
-        {name: `${adults}`, label: `${adults} adults`, icon: "people", reverseStyle: true},
-        {name: `${transmission.authomatic}`, label: "Automatic", icon: "automatic", reverseStyle: false},
-        {name: `${engine}`, label: `${engine}`, icon: "fuel", reverseStyle: true},
-        {name: `${details.airConditioner}`, label: "AC", icon: "clima", reverseStyle: true},
-        {name: `${details.kitchen}`, label: "Kitchen", icon: "kitchen", reverseStyle: false},
-        {name: `${details.beds}`, label: `${details.beds} beds`, icon: "bed", reverseStyle: false},
+        {name: "adults", label: `${adults} adults`, icon: "people", reverseStyle: true},
+        {name: "transmission", label:`${transmission}`, icon: "automatic", reverseStyle: false},
+        {name: "engine", label: `${engine}`, icon: "fuel", reverseStyle: true},
+        {name: "airConditioner", label: "AC", icon: "clima", reverseStyle: true},
+        {name: "kitchen", label: "Kitchen", icon: "kitchen", reverseStyle: false},
+        {name: "beds", label: `${details.beds} beds`, icon: "bed", reverseStyle: false},
+        {name: "TV", label: "TV", icon: "tv", reverseStyle: false},
+        {name: "shower", label: "Shower", icon: "shower", reverseStyle: false},
     ];
 
     const handleFavorite = (camper) => {
@@ -83,7 +85,7 @@ export const CampersItem = ({camper}) => {
                         const {name, label, icon, reverseStyle} = extra;
 
                         return(
-                            name &&
+                            ((+(camper.details[name]) >= 1) || (camper[name])) &&
                             <Extra key={name}>
                                 <ExtraSvg reverseStyle={reverseStyle}>
                                     <use href={`${sprite}#${icon}`} alt={name} />

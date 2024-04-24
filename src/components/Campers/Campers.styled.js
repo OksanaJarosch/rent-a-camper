@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../helpers/themes";
-import { StyledOrangeBtn } from "../../reusable/Reusable.styled";
+import { StyledBtn, StyledOrangeBtn } from "../../reusable/Reusable.styled";
 
 export const FilterSection = styled.form`
     width: 360px;
@@ -88,6 +88,6 @@ export const ChackboxLabel = styled.p`
     text-align: center;
 `
 
-export const SearchBtn = styled(StyledOrangeBtn)`
+export const SearchBtn = styled(StyledBtn)`
     margin-top: 64px;
 `

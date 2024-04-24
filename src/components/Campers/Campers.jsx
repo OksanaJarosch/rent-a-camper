@@ -16,7 +16,7 @@ export const Campers = () => {
         {name: "transmission", label: "Automatic", icon: "automatic", reverseStyle: false},
         {name: "kitchen", label: "Kitchen", icon: "kitchen", reverseStyle: false},
         {name: "TV", label: "TV", icon: "tv", reverseStyle: false},
-        {name: "bathroom", label: "Shower/WC", icon: "shower", reverseStyle: false},
+        {name: "shower", label: "Shower", icon: "shower", reverseStyle: false},
     ];
 
     const vehicleType = [
@@ -39,16 +39,23 @@ export const Campers = () => {
         return campers.filter(camper => camper.form === type);
     };
 
-    // const filterEquipment = () => {
-
-    // };
+    const filterEquipment = (campers, equipment) => {
+        if (equipment.length === 0) {
+            return campers;
+        }
+        return campers.filter(camper => {
+            return equipment.every(item => {
+                return (+(camper.details[item]) >= 1) || (camper[item] === "automatic");
+            })
+        });
+    };
 
     const getVisibleCampers = () => {
         let filteredCampers = campers;
 
         filteredCampers = filterLocation(filteredCampers, locationFilter);
         filteredCampers = filterType(filteredCampers, selectedRadio);
-        // filteredCampers = filterEquipment(filteredCampers, selectedCheckbox);
+        filteredCampers = filterEquipment(filteredCampers, selectedCheckbox);
 
         return filteredCampers;
     };
@@ -137,7 +144,7 @@ export const Campers = () => {
                     </Fieldset>
                 </FiltersStyled>
 
-                <SearchBtn>Search</SearchBtn>
+                <SearchBtn>Reset</SearchBtn>
             </FilterSection>
 
             <CampersSection>
