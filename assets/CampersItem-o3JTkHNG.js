@@ -1,14 +1,14 @@
-import{u as e,t as i,S as u,r as f,b as L,a as T,j as t,s as o,d as I,c as A}from"./index-BJw0b5Nx.js";const W=e.form`
+import{u as e,t as i,S as z,r as x,b as E,a as L,j as t,s as o,c as B,d as I,e as G}from"./index-Do-HSHb3.js";const X=e.form`
     width: 360px;
-`,X=e.section`
-    max-width: 888px;
 `,Y=e.section`
+    max-width: 888px;
+`,Z=e.section`
     margin-top: 32px;
-`,Z=e.div`
+`,ee=e.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
-`,ee=e.h3`
+`,te=e.h3`
     width: 360px;
     font-size: 20px;
     font-weight: 600;
@@ -17,24 +17,24 @@ import{u as e,t as i,S as u,r as f,b as L,a as T,j as t,s as o,d as I,c as A}fro
     padding-bottom: 24px;
     margin-bottom: 24px;
     border-bottom: ${i.border.lightGrey};
-`,te=e.p`
+`,ie=e.p`
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     color: ${i.color.grey};
     margin-bottom: 14px;
-`,ie=e.label`
+`,re=e.label`
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     color: ${i.color.grey};
-`,re=e.fieldset`
+`,oe=e.fieldset`
     border: none;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 0;
-`,oe=e.input`
+`,se=e.input`
     width: 360px;
     border-radius: 10px;
     border: none;
@@ -50,19 +50,19 @@ import{u as e,t as i,S as u,r as f,b as L,a as T,j as t,s as o,d as I,c as A}fro
     gap: 8px;
     border-radius: 10px;
     cursor: pointer;
-`,se=e.input`
+`,ae=e.input`
     opacity: 0;
     position: absolute;
     cursor: pointer;
-`,ae=e.p`
+`,le=e.p`
     color: ${i.color.dark};
     font-size: 16px;
     font-weight: 500;
     line-height: 1.25;
     text-align: center;
-`,le=e(u)`
+`,ce=e(z)`
     margin-top: 64px;
-`,B=e.li`
+`,P=e.li`
     display: flex;
     gap: 24px;
     width: 100%;
@@ -71,18 +71,18 @@ import{u as e,t as i,S as u,r as f,b as L,a as T,j as t,s as o,d as I,c as A}fro
     border-radius: 20px;
     border: ${i.border.inputGrey};
     margin-bottom: 32px;
-`,G=e.div`
+`,R=e.div`
     max-width: 290px;
     height: 310px;
     border-radius: 10px;
     overflow: hidden;
-`,P=e.img`
+`,A=e.img`
     height: 100%;
     object-fit: cover;
     object-position: center;
-`,R=e.div`
-    width: 526px;
 `,H=e.div`
+    width: 526px;
+`,V=e.div`
     display: flex;
     gap: 12px;
     align-items: center;
@@ -90,7 +90,10 @@ import{u as e,t as i,S as u,r as f,b as L,a as T,j as t,s as o,d as I,c as A}fro
     display: flex;
     justify-content:space-between;
     margin-bottom: 8px;
-`,m=e.h2`
+`,h=e.h2`
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     color: ${i.color.dark};
     font-size: 24px;
     font-weight: 600;
@@ -146,4 +149,4 @@ import{u as e,t as i,S as u,r as f,b as L,a as T,j as t,s as o,d as I,c as A}fro
     border: none;
     background-color: transparent;
     cursor: pointer;
-`,U=r=>r.favorites,ce=({camper:r})=>{const{gallery:b,name:c,location:v,price:$,description:j,adults:d,engine:p,details:n,transmission:w,rating:y,reviews:k}=r,[a,x]=f.useState(!1),h=L(),g=T(U);f.useEffect(()=>{g.includes(r)&&x(!0)},[r,g]);const S=[{name:`${d}`,label:`${d} adults`,icon:"people",reverseStyle:!0},{name:`${w.authomatic}`,label:"Automatic",icon:"automatic",reverseStyle:!1},{name:`${p}`,label:`${p}`,icon:"fuel",reverseStyle:!0},{name:`${n.airConditioner}`,label:"AC",icon:"clima",reverseStyle:!0},{name:`${n.kitchen}`,label:"Kitchen",icon:"kitchen",reverseStyle:!1},{name:`${n.beds}`,label:`${n.beds} beds`,icon:"bed",reverseStyle:!1}],C=s=>{h(a?I(s._id):A(s)),x(!a)};return t.jsxs(B,{children:[t.jsx(G,{children:t.jsx(P,{src:b[0],alt:c})}),t.jsxs(R,{children:[t.jsxs(D,{children:[t.jsx(m,{children:c}),t.jsxs(H,{children:[t.jsxs(m,{children:["€",$.toFixed(2)]}),t.jsx(Q,{onClick:()=>C(r),children:t.jsx("svg",{width:"24",height:"24",children:a?t.jsx("use",{fill:"transparent",stroke:`${i.color.dark}`,href:`${o}#fav`}):t.jsx("use",{fill:"transparent",stroke:`${i.color.dark}`,href:`${o}#nofav`})})})]})]}),t.jsxs(K,{children:[t.jsxs(M,{href:"",children:[t.jsx("svg",{width:"16",height:"16",children:t.jsx("use",{href:`${o}#star`})}),y,"(",k.length," Reviews)"]}),t.jsxs(N,{children:[t.jsx("svg",{width:"16",height:"16",fill:"transparent",stroke:`${i.color.dark}`,children:t.jsx("use",{href:`${o}#map-pin`})}),v]})]}),t.jsx(O,{children:j}),t.jsx(q,{children:S.map(s=>{const{name:l,label:F,icon:z,reverseStyle:E}=s;return l&&t.jsxs(_,{children:[t.jsx(J,{reverseStyle:E,children:t.jsx("use",{href:`${o}#${z}`,alt:l})}),t.jsx("span",{children:F})]},l)})}),t.jsx(u,{children:"Show more"})]})]})};export{ne as C,W as F,se as H,oe as I,Z as L,le as S,te as T,ae as a,ie as b,Y as c,ee as d,re as e,X as f,ce as g,U as s};
+`,U=r=>r.favorites,de=({camper:r})=>{const{gallery:g,name:l,location:f,price:b,description:m,adults:u,engine:v,details:w,transmission:y,rating:j,reviews:$}=r,[a,c]=x.useState(!1),d=E(),p=L(U);x.useEffect(()=>{p.includes(r)&&c(!0)},[r,p]);const S=[{name:"adults",label:`${u} adults`,icon:"people",reverseStyle:!0},{name:"transmission",label:`${y}`,icon:"automatic",reverseStyle:!1},{name:"engine",label:`${v}`,icon:"fuel",reverseStyle:!0},{name:"airConditioner",label:"AC",icon:"clima",reverseStyle:!0},{name:"kitchen",label:"Kitchen",icon:"kitchen",reverseStyle:!1},{name:"beds",label:`${w.beds} beds`,icon:"bed",reverseStyle:!1},{name:"TV",label:"TV",icon:"tv",reverseStyle:!1},{name:"shower",label:"Shower",icon:"shower",reverseStyle:!1}],k=s=>{d(a?I(s._id):G(s)),c(!a)};return t.jsxs(P,{children:[t.jsx(R,{children:t.jsx(A,{src:g[0],alt:l})}),t.jsxs(H,{children:[t.jsxs(D,{children:[t.jsx(h,{children:l}),t.jsxs(V,{children:[t.jsxs(h,{children:["€",b.toFixed(2)]}),t.jsx(Q,{onClick:()=>k(r),children:t.jsx("svg",{width:"24",height:"24",children:a?t.jsx("use",{fill:"transparent",stroke:`${i.color.dark}`,href:`${o}#fav`}):t.jsx("use",{fill:"transparent",stroke:`${i.color.dark}`,href:`${o}#nofav`})})})]})]}),t.jsxs(K,{children:[t.jsxs(M,{href:"",children:[t.jsx("svg",{width:"16",height:"16",children:t.jsx("use",{href:`${o}#star`})}),j,"(",$.length," Reviews)"]}),t.jsxs(N,{children:[t.jsx("svg",{width:"16",height:"16",fill:"transparent",stroke:`${i.color.dark}`,children:t.jsx("use",{href:`${o}#map-pin`})}),f]})]}),t.jsx(O,{children:m}),t.jsx(q,{children:S.map(s=>{const{name:n,label:C,icon:F,reverseStyle:T}=s;return(+r.details[n]>=1||r[n])&&t.jsxs(_,{children:[t.jsx(J,{reverseStyle:T,children:t.jsx("use",{href:`${o}#${F}`,alt:n})}),t.jsx("span",{children:C})]},n)})}),t.jsx(B,{children:"Show more"})]})]})};export{ne as C,X as F,ae as H,se as I,ee as L,ce as S,ie as T,le as a,re as b,Z as c,te as d,oe as e,Y as f,de as g,U as s};

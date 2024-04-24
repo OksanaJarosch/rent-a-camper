@@ -1,0 +1,1 @@
+import{a as t,j as s,C as a}from"./index-Do-HSHb3.js";import{s as o,f as i,g as n}from"./CampersItem-o3JTkHNG.js";const c=()=>{const r=t(o);return s.jsx(a,{children:s.jsx(i,{children:s.jsx("ul",{children:r.map(e=>s.jsx(n,{camper:e},e._id))})})})};function x(){return s.jsx(c,{})}export{x as default};
