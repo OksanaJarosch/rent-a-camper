@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container } from "../../reusable/Reusable.styled";
+import { Container, Placeholder } from "../../reusable/Reusable.styled";
 import { CustomCheckbox } from "../CustomCheckbox/CustomCheckbox";
 import { CampersSection, Fieldset, FilterSection, FiltersStyled, Input, Label, LittleTittle, Location, SearchBtn, Text } from "./Campers.styled";
 import campers from "../../campers.json";
@@ -148,12 +148,18 @@ export const Campers = () => {
             </FilterSection>
 
             <CampersSection>
-                <ul>
-                    {visibleCampers.map(camper => {
-                        return <CampersItem key={camper._id} camper={camper}/>
-                    })}
-                </ul>
-                {/* <StyledBtn>Load more</StyledBtn> */}
+                {visibleCampers.length ? (
+                    <ul>
+                        {visibleCampers.map(camper => {
+                            return <CampersItem key={camper._id} camper={camper}/>
+                        })}
+                    </ul>
+                ) : (
+                    <Placeholder>
+                        <p>Sorry, there's nothing to match what you've searched for.</p>
+                    </Placeholder>
+                )
+        }
             </CampersSection>
         </Container>
     )

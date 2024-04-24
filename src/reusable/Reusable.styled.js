@@ -30,4 +30,19 @@ export const Container = styled.div`
     justify-content: space-around;
     gap: 64px;
     padding: 150px 64px 100px 64px;
-`
+`;
+
+
+export const Placeholder = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 888px;
+    height: 358px;
+    padding: 24px;
+    border-radius: 20px;
+    border: ${theme.border.inputGrey};
+    font-size: 24px;
+    line-height: 1.5;
+    color: ${theme.color.grey};
+`;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../helpers/themes";
-import { StyledBtn, StyledOrangeBtn } from "../../reusable/Reusable.styled";
+import { StyledBtn } from "../../reusable/Reusable.styled";
 
 export const FilterSection = styled.form`
     width: 360px;
