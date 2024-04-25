@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {theme} from "../../helpers/themes";
 import { Link, NavLink } from "react-router-dom";
+import { StyledBtn } from "../../reusable/Reusable.styled";
 
 
 export const StyledMenu = styled.div`
@@ -48,6 +49,10 @@ export const StyledNavLink = styled(NavLink)`
     &:hover {
         color: ${theme.color.orange};
     }
+
+    @media (max-width: ${theme.breakpoint.md}) {
+        display: block;
+    }
 `;
 
 export const StyledBurger = styled.button`
@@ -67,11 +72,18 @@ export const BackdropMenu = styled.div`
     background-color: ${theme.color.beige};
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 36px;
     justify-content: center;
     padding: 24px;
 
     @media (min-width: ${theme.breakpoint.md}) {
         display: none;
     }
+`;
+
+export const MobBtn = styled(StyledBtn)`
+    padding: 0;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 `;
