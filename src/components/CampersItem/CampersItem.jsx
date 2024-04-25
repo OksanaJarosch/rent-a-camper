@@ -6,12 +6,14 @@ import sprite from "assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, deleteFavorite } from "../../redux/favorites/favoritesSlice";
 import { selectFavorites } from "../../redux/selectors";
+import { CamperModal } from "../Modal/Modal";
 
 
 export const CampersItem = ({camper}) => {
     const {gallery, name, location, price, description, adults, engine, details, transmission, rating, reviews} = camper;
 
     const [isFavorite, setIsFavorite] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const dispatch = useDispatch();
     const fav = useSelector(selectFavorites);
@@ -39,6 +41,14 @@ export const CampersItem = ({camper}) => {
         };
 
         setIsFavorite(!isFavorite);
+    };
+
+    const handleModalOpen = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleModalClose = () => {
+        setIsModalOpen(false);
     };
 
     return (
@@ -96,7 +106,9 @@ export const CampersItem = ({camper}) => {
                     })}
                 </Extras>
 
-                <StyledOrangeBtn>Show more</StyledOrangeBtn>
+                <StyledOrangeBtn onClick={handleModalOpen}>Show more</StyledOrangeBtn>
+
+                {isModalOpen && <CamperModal onOpen={handleModalOpen} onClose={handleModalClose} camper={camper}/>}
 
             </AboutContainer>
         </CamperStyled>

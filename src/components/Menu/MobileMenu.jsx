@@ -1,4 +1,3 @@
-import { StyledBtn } from "../../reusable/Reusable.styled";
 import { BackdropMenu, MobBtn, StyledNavLink } from "./Menu.styled";
 
 export const MobileMenu = ({onClick}) => {
