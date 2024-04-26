@@ -1,7 +1,10 @@
 import Modal from 'react-modal';
 import sprite from "assets/sprite.svg";
 import { theme } from '../../helpers/themes';
-import { CloseBtn } from './Modal.styled';
+import { CamperPhotos, CloseBtn, Description, PhotoPlace, ReviewsContainer, TitleFlexContainer } from './Modal.styled';
+import { Title } from '../../reusable/Reusable.styled';
+import { Location, Picture, ReviewsLink } from '../CampersItem/CampersItem.styled';
+
 
 const customStyles = {
     content: {
@@ -12,7 +15,8 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
         height: '90vh',
-        width: '90vh',
+        width: '80vw',
+        maxWidth: '982px',
         borderRadius: '20px',
         padding: '40px',
     },
@@ -23,22 +27,52 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const CamperModal = ({onOpen, onClose, camper}) => {
+export const CamperModal = ({onOpen, onClose, camper, isOpen}) => {
+    const {gallery, name, location, price, description, adults, engine, details, transmission, rating, reviews} = camper;
+
     return (
         <Modal
-            isOpen={onOpen}
+            isOpen={isOpen}
             onRequestClose={onClose}
             style={customStyles}
             contentLabel="details window"
             >
 
-            <CloseBtn onClick={onClose}>
-                <svg width="16" height="16" stroke={`${theme.color.dark}`} viewBox="0 0 32 32">
-                    <use href={`${sprite}#close-x`} />
-                </svg>
-            </CloseBtn>
-            
-            <div>I am a modal</div>
+            <TitleFlexContainer>
+                <Title>{name}</Title>
+                <CloseBtn onClick={onClose}>
+                    <svg width="16" height="16" stroke={`${theme.color.dark}`} viewBox="0 0 32 32">
+                        <use href={`${sprite}#close-x`} />
+                    </svg>
+                </CloseBtn>
+            </TitleFlexContainer>
+
+            <ReviewsContainer>
+                    <ReviewsLink href="" >
+                        <svg width="16" height="16">
+                            <use href={`${sprite}#star`}/>
+                        </svg>
+                        {rating}({reviews.length} Reviews)
+                    </ReviewsLink>
+                    <Location>
+                        <svg width="16" height="16" fill="transparent" stroke={`${theme.color.dark}`}>
+                            <use href={`${sprite}#map-pin`}/>
+                        </svg>
+                        {location}
+                    </Location>
+                </ReviewsContainer>
+
+                <Title>€{price.toFixed(2)}</Title>
+
+                <CamperPhotos>
+                    {gallery.map(pic => {
+                        return (<PhotoPlace key={name}>
+                                    <Picture src={pic} alt={name}/>
+                                </PhotoPlace>)
+                    })}
+                </CamperPhotos>
+
+                <Description>{description}</Description>
             
         </Modal>
     )

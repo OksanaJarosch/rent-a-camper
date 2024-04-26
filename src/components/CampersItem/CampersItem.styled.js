@@ -42,16 +42,6 @@ export const TitleContainer = styled.div`
     margin-bottom: 8px;
 `;
 
-export const Title = styled.h2`
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: ${theme.color.dark};
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.25;
-`;
-
 export const FlexContainer = styled.div`
     display: flex;
     gap: 16px;
@@ -62,7 +52,7 @@ export const ShirtText = styled.p`
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #475467;
+    color: ${theme.color.grey};
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 24px; 

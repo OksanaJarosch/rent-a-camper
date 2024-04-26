@@ -46,3 +46,13 @@ export const Placeholder = styled.div`
     line-height: 1.5;
     color: ${theme.color.grey};
 `;
+
+export const Title = styled.h2`
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: ${theme.color.dark};
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+`;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { theme } from "../../helpers/themes";
-import { StyledOrangeBtn } from "../../reusable/Reusable.styled";
-import { AboutContainer, CamperStyled, Extra, ExtraSvg, Extras, FavBtn, FlexContainer, Location, Picture, PictureContainer, PriceContainer, ReviewsLink, ShirtText, Title, TitleContainer } from "./CampersItem.styled";
+import { StyledOrangeBtn, Title } from "../../reusable/Reusable.styled";
+import { AboutContainer, CamperStyled, Extra, ExtraSvg, Extras, FavBtn, FlexContainer, Location, Picture, PictureContainer, PriceContainer, ReviewsLink, ShirtText, TitleContainer } from "./CampersItem.styled";
 import sprite from "assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, deleteFavorite } from "../../redux/favorites/favoritesSlice";
@@ -108,7 +108,7 @@ export const CampersItem = ({camper}) => {
 
                 <StyledOrangeBtn onClick={handleModalOpen}>Show more</StyledOrangeBtn>
 
-                {isModalOpen && <CamperModal onOpen={handleModalOpen} onClose={handleModalClose} camper={camper}/>}
+                {isModalOpen && <CamperModal onOpen={handleModalOpen} onClose={handleModalClose} camper={camper} isOpen={isModalOpen}/>}
 
             </AboutContainer>
         </CamperStyled>
