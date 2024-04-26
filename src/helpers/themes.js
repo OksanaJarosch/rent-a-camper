@@ -9,6 +9,7 @@ export const theme = {
         beige: "#F7F7F7",
         white: "#FFF",
         transparentGrey: "rgba(255, 255, 255, 0.35)",
+        scroll: "#D9D9D9",
     },
     breakpoint: {
         sm: '375px',

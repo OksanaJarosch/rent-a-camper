@@ -1,9 +1,10 @@
 import Modal from 'react-modal';
 import sprite from "assets/sprite.svg";
 import { theme } from '../../helpers/themes';
-import { CamperPhotos, CloseBtn, Description, PhotoPlace, ReviewsContainer, TitleFlexContainer } from './Modal.styled';
+import { ButtonsContainer, CamperPhotos, CloseBtn, Description, InfoBtn, LittleTitle, PhotoPlace, Price, ReviewsContainer, ScrollContainer, TitleFlexContainer } from './Modal.styled';
 import { Title } from '../../reusable/Reusable.styled';
 import { Location, Picture, ReviewsLink } from '../CampersItem/CampersItem.styled';
+import { useState } from 'react';
 
 
 const customStyles = {
@@ -14,11 +15,12 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        height: '90vh',
+        height: 'calc(100vh - 80px)',
         width: '80vw',
         maxWidth: '982px',
         borderRadius: '20px',
-        padding: '40px',
+        padding: '40px 16px 40px 40px',
+        overflow: 'hidden' 
     },
     overlay: {
         backgroundColor: 'rgba(17, 18, 19, 0.40)',
@@ -29,6 +31,16 @@ Modal.setAppElement('#root');
 
 export const CamperModal = ({onOpen, onClose, camper, isOpen}) => {
     const {gallery, name, location, price, description, adults, engine, details, transmission, rating, reviews} = camper;
+
+    const [isFeautures, setIsFeautures] = useState(true);
+
+    const handleFeautures = () => {
+        setIsFeautures(true);
+    };
+
+    const handleReviews = () => {
+        setIsFeautures(false);
+    };
 
     return (
         <Modal
@@ -62,18 +74,32 @@ export const CamperModal = ({onOpen, onClose, camper, isOpen}) => {
                     </Location>
                 </ReviewsContainer>
 
-                <Title>€{price.toFixed(2)}</Title>
+                <Price>€{price.toFixed(2)}</Price>
 
-                <CamperPhotos>
-                    {gallery.map(pic => {
-                        return (<PhotoPlace key={name}>
-                                    <Picture src={pic} alt={name}/>
-                                </PhotoPlace>)
-                    })}
-                </CamperPhotos>
+                <ScrollContainer>
+                    <CamperPhotos>
+                        {gallery.map(pic => {
+                            return (<PhotoPlace key={name}>
+                                        <Picture src={pic} alt={name}/>
+                                    </PhotoPlace>)
+                        })}
+                    </CamperPhotos>
 
-                <Description>{description}</Description>
-            
+                    <Description>{description}</Description>
+
+                    <ButtonsContainer>
+                        <InfoBtn onClick={handleFeautures} isActive={isFeautures}>
+                            <LittleTitle>
+                                Feautures
+                            </LittleTitle>
+                        </InfoBtn>
+                        <InfoBtn onClick={handleReviews} isActive={!isFeautures}>
+                            <LittleTitle>
+                                Reviews
+                            </LittleTitle>
+                        </InfoBtn>
+                    </ButtonsContainer>
+                </ScrollContainer>
         </Modal>
     )
 };
