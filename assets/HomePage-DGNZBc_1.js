@@ -1,4 +1,4 @@
-import{u as t,t as r,j as e,C as a}from"./index-DKGpo3hv.js";const o=t.div`
+import{u as t,t as r,j as e,C as a}from"./index-CYo5S3_e.js";const o=t.div`
     max-width: 1100px;
     padding: 36px;
     background-color: ${r.color.transparentGrey};
