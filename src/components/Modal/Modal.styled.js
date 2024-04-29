@@ -86,3 +86,10 @@ export const ButtonsContainer = styled.div`
     padding-bottom: 24px;
     border-bottom: ${theme.border.inputGrey};
 `;
+
+export const FlexContainer = styled.div`
+    display: flex;
+    justify-content:space-between;
+    gap: 24px;
+    margin-right: 24px;
+`;
