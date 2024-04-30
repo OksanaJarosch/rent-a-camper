@@ -33,7 +33,7 @@ export const PhotoPlace = styled.li`
     height: 310px;
     border-radius: 10px;
     overflow: hidden;
-    background-color: ${theme.color.beige}
+    border: ${theme.border.inputGrey};
 `;
 
 export const Description = styled.p`
@@ -92,4 +92,8 @@ export const FlexContainer = styled.div`
     justify-content:space-between;
     gap: 24px;
     margin-right: 24px;
+`;
+
+export const DetailsContainer = styled.div`
+    max-width: 430px;
 `;

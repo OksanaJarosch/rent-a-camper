@@ -2,11 +2,7 @@ import styled from "styled-components";
 import { LittleTitle } from "../Modal/Modal.styled";
 import { theme } from "../../helpers/themes";
 
-export const FeauturesContainer = styled.div`
-    max-width: 430px;
-`;
-
-export const VehicleDetails = styled.div`
+export const VehicleDetails = styled.li`
     display: flex;
     justify-content: space-between;
     margin-bottom: 14px;

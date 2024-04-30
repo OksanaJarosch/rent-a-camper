@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Container, Placeholder } from "../../reusable/Reusable.styled";
+import { Container, Input, Placeholder } from "../../reusable/Reusable.styled";
 import { CustomCheckbox } from "../CustomCheckbox/CustomCheckbox";
-import { CampersSection, Fieldset, FilterSection, FiltersStyled, Input, Label, LittleTittle, Location, SearchBtn, Text } from "./Campers.styled";
+import { CampersSection, Fieldset, FilterSection, FiltersStyled, Label, LittleTittle, Location, SearchBtn, Text } from "./Campers.styled";
 import campers from "../../campers.json";
 import { CampersItem } from "../CampersItem/CampersItem"
 
@@ -97,7 +97,7 @@ export const Campers = () => {
 
     return (
         <Container>
-            <FilterSection type="submit">
+            <FilterSection>
                 <Location>
                 <Label for="location">Location</Label>
                 <Input type="name" id="location" placeholder="Please enter location" onChange={evt => updateLocation(evt.target.value)}/>

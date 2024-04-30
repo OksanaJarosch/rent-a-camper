@@ -8,6 +8,7 @@ export const StyledOrangeBtn = styled.button`
     border: none;
     background: ${theme.color.orange};
     color: ${theme.color.white};
+    width: fit-content;
     cursor: pointer;
     &:hover {
         background: ${theme.color.orangeHover};
@@ -55,4 +56,12 @@ export const Title = styled.h2`
     font-size: 24px;
     font-weight: 600;
     line-height: 1.25;
+`;
+
+export const Input = styled.input`
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background: ${theme.color.beige};
+    padding: 18px;
 `;

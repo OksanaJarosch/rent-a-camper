@@ -1,11 +1,12 @@
 import Modal from 'react-modal';
 import sprite from "assets/sprite.svg";
 import { theme } from '../../helpers/themes';
-import { ButtonsContainer, CamperPhotos, CloseBtn, Description, FlexContainer, InfoBtn, LittleTitle, PhotoPlace, Price, ReviewsContainer, ScrollContainer, TitleFlexContainer } from './Modal.styled';
+import { ButtonsContainer, CamperPhotos, CloseBtn, Description, DetailsContainer, FlexContainer, InfoBtn, LittleTitle, PhotoPlace, Price, ReviewsContainer, ScrollContainer, TitleFlexContainer } from './Modal.styled';
 import { Title } from '../../reusable/Reusable.styled';
 import { Location, Picture, ReviewsLink } from '../CampersItem/CampersItem.styled';
 import { useState } from 'react';
 import { Feautures } from '../Feautures/Feautures';
+import { BookingForm } from '../BookingForm/BookingForm';
 
 
 const customStyles = {
@@ -103,7 +104,10 @@ export const CamperModal = ({onOpen, onClose, camper, isOpen}) => {
 
 
                     <FlexContainer>
-                        <Feautures camper={camper}/>
+                        <DetailsContainer>
+                            {isFeautures ? <Feautures camper={camper}/> : <div></div>}
+                        </DetailsContainer>
+                        <BookingForm/>
                     </FlexContainer>
                 </ScrollContainer>
 

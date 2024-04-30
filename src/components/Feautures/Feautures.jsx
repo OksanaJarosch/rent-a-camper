@@ -1,5 +1,5 @@
 import { Extra, ExtraSvg } from "../CampersItem/CampersItem.styled";
-import { Extras, FeauturesContainer, Title, VehicleDetails } from "./Feautures.styled";
+import { Extras, Title, VehicleDetails } from "./Feautures.styled";
 import sprite from "assets/sprite.svg";
 
 export const Feautures = ({camper}) => {
@@ -25,7 +25,7 @@ export const Feautures = ({camper}) => {
     ];
 
     return (
-        <FeauturesContainer>
+        <>
             <Extras>
             {camperExtras.map(extra => {
                         const {name, label, icon, reverseStyle} = extra;
@@ -46,23 +46,25 @@ export const Feautures = ({camper}) => {
                 Vehicle details
             </Title>
 
-            <VehicleDetails>
-                <p>Form</p>
-                {camper.form === "alcove" && <p>Alcove</p>}
-                {camper.form === "fullyIntegrated" && <p>Fully Integrated</p>}
-                {camper.form === "panelTruck" && <p>Pannel Truck</p>}
-            </VehicleDetails>
-            
-            {vehicleDetails.map(item => {
-                const {name, label} = item;
+            <ul>
+                <VehicleDetails>
+                    <p>Form</p>
+                    {camper.form === "alcove" && <p>Alcove</p>}
+                    {camper.form === "fullyIntegrated" && <p>Fully Integrated</p>}
+                    {camper.form === "panelTruck" && <p>Pannel Truck</p>}
+                </VehicleDetails>
+                
+                {vehicleDetails.map(item => {
+                    const {name, label} = item;
 
-                return (
-                    <VehicleDetails>
-                        <p>{label}</p>
-                        <p>{camper[name]}</p>
-                    </VehicleDetails>
-                )
-            })}
-        </FeauturesContainer>
+                    return (
+                        <VehicleDetails>
+                            <p>{label}</p>
+                            <p>{camper[name]}</p>
+                        </VehicleDetails>
+                    )
+                })}
+            </ul>
+        </>
     )
 }

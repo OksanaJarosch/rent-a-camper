@@ -54,14 +54,6 @@ export const Fieldset = styled.fieldset`
     padding: 0;
 `
 
-export const Input = styled.input`
-    width: 360px;
-    border-radius: 10px;
-    border: none;
-    background: ${theme.color.beige};
-    padding: 18px;
-`
-
 export const Checkbox = styled.div`
     display: flex;
     flex-direction: column;
