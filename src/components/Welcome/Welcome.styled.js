@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../helpers/themes";
+import { Link } from "react-router-dom";
 
 
 export const WelcomeText = styled.div`
@@ -20,4 +21,9 @@ export const Title = styled.h1`
 export const Text = styled.p`
     font-size: 36px;
     font-weight: 300;
+    margin-bottom: 44px;
+`;
+
+export const StyledLink = styled(Link)`
+    color: inherit;
 `;
