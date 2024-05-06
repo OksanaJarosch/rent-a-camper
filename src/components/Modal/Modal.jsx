@@ -7,6 +7,7 @@ import { Location, Picture, ReviewsLink } from '../CampersItem/CampersItem.style
 import { useState } from 'react';
 import { Feautures } from '../Feautures/Feautures';
 import { BookingForm } from '../BookingForm/BookingForm';
+import { ReviewsList } from '../Reviews/ReviewsList';
 
 
 const customStyles = {
@@ -105,7 +106,7 @@ export const CamperModal = ({onOpen, onClose, camper, isOpen}) => {
 
                     <FlexContainer>
                         <DetailsContainer>
-                            {isFeautures ? <Feautures camper={camper}/> : <div></div>}
+                            {isFeautures ? <Feautures camper={camper}/> : <ReviewsList reviews={reviews}/>}
                         </DetailsContainer>
                         <BookingForm/>
                     </FlexContainer>
