@@ -35,6 +35,11 @@ export const StyledLogo = styled(Link)`
 
     @media (min-width: ${theme.breakpoint.md}) {
         display: block;
+        transition: ${theme.transition};
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 `;
 
@@ -42,12 +47,13 @@ export const StyledNavLink = styled(NavLink)`
     color: ${theme.color.dark};
     font-weight: 600;
     padding: 16px;
-    transition: color ${theme.transition};
+    transition: ${theme.transition};
+
     &.active {
         color: ${theme.color.orange};
     }
     &:hover {
-        color: ${theme.color.orange};
+        transform: scale(1.1);
     }
 
     @media (max-width: ${theme.breakpoint.md}) {

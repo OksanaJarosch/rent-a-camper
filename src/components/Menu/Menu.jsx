@@ -16,7 +16,7 @@ export const Menu = () => {
         <>
         <StyledMenu>
             <StyledLogo to="/">
-                <svg width="32" height="32">
+                <svg width="36" height="36">
                     <use href={`${sprite}#van`}/>
                 </svg>
             </StyledLogo>

@@ -7,6 +7,11 @@ export const CloseBtn = styled.button`
     padding: 0;
     border: none;
     background: transparent;
+    transition: ${theme.transition};
+
+    &:hover {
+        transform: scale(1.1);
+    }
 `;
 
 export const TitleFlexContainer = styled.div`
@@ -67,10 +72,22 @@ export const ScrollContainer = styled.div`
 `;
 
 export const InfoBtn = styled.button`
+    position: relative;
     background-color: transparent;
     border: none;
     padding: 0;
-    color: ${props => props.isActive ? theme.color.orange : theme.color.dark};
+    cursor: pointer;
+
+    &::after {
+        display: ${props => props.isActive ? 'block' : 'none'};
+        position: absolute;
+        left: 0;
+        bottom: -26px;
+        content: "";
+        width: 100%;
+        height: 4px;
+        background-color: ${theme.color.orange};
+    }
 `;
 
 export const LittleTitle = styled.h3`

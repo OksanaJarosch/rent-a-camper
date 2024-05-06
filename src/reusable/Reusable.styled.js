@@ -10,6 +10,8 @@ export const StyledOrangeBtn = styled.button`
     color: ${theme.color.white};
     width: fit-content;
     cursor: pointer;
+    transition: ${theme.transition};
+
     &:hover {
         background: ${theme.color.orangeHover};
     }
@@ -21,6 +23,8 @@ export const StyledBtn = styled.button`
     border: ${theme.border.inputGrey};
     background: transparent;
     cursor: pointer;
+    transition: ${theme.transition};
+    
     &:hover {
         border-color: ${theme.color.orange};
     }
