@@ -3,11 +3,21 @@ import { theme } from "../../helpers/themes";
 import { StyledBtn } from "../../reusable/Reusable.styled";
 
 export const FilterSection = styled.form`
-    width: 360px;
+    width: auto;
+
+    @media (min-width: ${theme.breakpoint.xl}) {
+        width: 360px;
+    }
 `
 
 export const CampersSection = styled.section`
     max-width: 888px;
+
+    @media (max-width: ${theme.breakpoint.xl}) {
+        max-width: 610px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 `
 
 export const FiltersStyled = styled.section`

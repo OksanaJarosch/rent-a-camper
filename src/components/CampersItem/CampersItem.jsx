@@ -56,8 +56,8 @@ export const CampersItem = ({camper}) => {
             <PictureContainer>
                 <Picture src={gallery[0]} alt={name} />
             </PictureContainer>
-            <AboutContainer>
 
+            <AboutContainer>
                 <TitleContainer>
                     <Title>{name}</Title>
                     <PriceContainer>
@@ -109,7 +109,6 @@ export const CampersItem = ({camper}) => {
                 <StyledOrangeBtn onClick={handleModalOpen}>Show more</StyledOrangeBtn>
 
                 {isModalOpen && <CamperModal onOpen={handleModalOpen} onClose={handleModalClose} camper={camper} isOpen={isModalOpen}/>}
-
             </AboutContainer>
         </CamperStyled>
     )

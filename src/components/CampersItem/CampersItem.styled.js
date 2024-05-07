@@ -4,20 +4,30 @@ import { theme } from "../../helpers/themes";
 
 export const CamperStyled = styled.li`
     display: flex;
+    flex-direction: column;
     gap: 24px;
     width: 100%;
-    height: 358px;
+    height: 100%;
     padding: 24px;
     border-radius: 20px;
     border: ${theme.border.inputGrey};
     margin-bottom: 32px;
+
+    @media (min-width: ${theme.breakpoint.xl}) {
+        height: 358px;
+        flex-direction: row;
+    }
 `;
 
 export const PictureContainer = styled.div`
-    max-width: 290px;
+    max-width: max-content;
     height: 310px;
     border-radius: 10px;
     overflow: hidden;
+
+    @media (min-width: ${theme.breakpoint.xl}) {
+        max-width: 290px;
+    }
 `;
 
 export const Picture = styled.img`
@@ -27,7 +37,11 @@ export const Picture = styled.img`
 `;
 
 export const AboutContainer = styled.div`
-    width: 526px;
+    width: 100%;
+
+    @media (min-width: ${theme.breakpoint.xl}) {
+        width: 526px;
+    }
 `;
 
 export const PriceContainer = styled.div`

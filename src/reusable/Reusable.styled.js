@@ -32,9 +32,15 @@ export const StyledBtn = styled.button`
 
 export const Container = styled.div`
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     gap: 64px;
     padding: 150px 64px 100px 64px;
+
+    @media (min-width: ${theme.breakpoint.xl}) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 `;
 
 
@@ -63,7 +69,7 @@ export const Title = styled.h2`
 `;
 
 export const Input = styled.input`
-    width: 100%;
+    max-width: 360px;
     border-radius: 10px;
     border: none;
     background: ${theme.color.beige};
