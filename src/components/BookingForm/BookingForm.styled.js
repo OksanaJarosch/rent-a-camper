@@ -29,3 +29,9 @@ export const FormText = styled.p`
     line-height: 1.5;
     margin-bottom: 24px; 
 `;
+
+export const StyledError = styled.p`
+    color: ${theme.color.orange};
+    font-size: 12px;
+    padding-left: 8px;
+`;

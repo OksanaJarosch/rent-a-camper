@@ -1,8 +1,9 @@
 import { Input, StyledOrangeBtn } from "../../reusable/Reusable.styled";
-import { FormText, FormTitle, InputsContainer, StyledForm } from "./BookingForm.styled";
+import { FormText, FormTitle, InputsContainer, StyledError, StyledForm } from "./BookingForm.styled";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import toast from "react-hot-toast";
 
 
 const today = new Date();
@@ -24,23 +25,24 @@ export const BookingForm = () => {
 
     const handleBooking = data => {
         console.log(data);
+        toast.success("Successfully sent")
         reset();
     };
 
     return(
-        <StyledForm onSubmit={handleSubmit(handleBooking)}>
+        <StyledForm onSubmit={handleSubmit(handleBooking)} noValidate>
             <div>
                 <FormTitle>Book your campervan now</FormTitle>
                 <FormText>Stay connected! We are always ready to help you.</FormText>
                 <InputsContainer>
                     <Input type="name" {...register("name")} placeholder="Name"/>
-                    <p>{errors.name?.message}</p>
+                    <StyledError>{errors.name?.message}</StyledError>
                     <Input type="email" {...register("email")} placeholder="Email"/>
-                    <p>{errors.email?.message}</p>
+                    <StyledError>{errors.email?.message}</StyledError>
                     <Input type="date" {...register("date")} placeholder="Booking date"/>
-                    <p>{errors.date?.message}</p>
+                    <StyledError>{errors.date?.message}</StyledError>
                     <Input type="text" {...register("comment")} placeholder="Comment"/>
-                    <p>{errors.comment?.message}</p>
+                    <StyledError>{errors.comment?.message}</StyledError>
                 </InputsContainer>
             </div>
             <StyledOrangeBtn type="submit">Send</StyledOrangeBtn>

@@ -3,6 +3,7 @@ import { GlobalStyle } from './GlobalStyle';
 import { Route, Routes } from 'react-router-dom';
 import { AppLayout } from './components/AppLayout/AppLayout';
 import { lazy } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 const HomePage = lazy(() => import("pages/HomePage/HomePage.jsx"));
 const CatalogPage = lazy(() => import("pages/CatalogPage/CatalogPage.jsx"));
@@ -25,6 +26,7 @@ export default function App() {
       </Routes>
     </Suspense>
 
+      <Toaster position='top-right' />
       <GlobalStyle />
     </>
   )

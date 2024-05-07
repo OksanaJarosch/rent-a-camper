@@ -19,8 +19,8 @@ export const CampersItem = ({camper}) => {
     const fav = useSelector(selectFavorites);
 
     useEffect (() => {
-        fav.includes(camper) && setIsFavorite(true);
-    }, [camper, fav]);
+        setIsFavorite(fav.some(camp => camp._id === camper._id))
+    }, [camper._id, fav]);
 
     const camperExtras = [
         {name: "adults", label: `${adults} adults`, icon: "people", reverseStyle: true},
