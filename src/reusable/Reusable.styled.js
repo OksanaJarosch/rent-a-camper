@@ -3,6 +3,9 @@ import {theme} from "../helpers/themes";
 
 
 export const StyledOrangeBtn = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 16px 60px;
     border-radius: 200px;
     border: none;
