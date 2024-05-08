@@ -19,7 +19,7 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
         height: 'calc(100vh - 80px)',
-        width: '80vw',
+        width: '90vw',
         maxWidth: '982px',
         borderRadius: '20px',
         padding: '40px 16px 40px 40px',

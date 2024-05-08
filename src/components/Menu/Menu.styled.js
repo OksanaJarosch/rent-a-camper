@@ -10,12 +10,11 @@ export const StyledMenu = styled.div`
     justify-content: end;
     align-items: center;
     width: 100%;
-    height: 85px;
-    padding: 16px 32px;
+    padding: 32px;
 
     @media (min-width: ${theme.breakpoint.md}) {
         justify-content: space-between;
-        padding: 16px 64px;
+        padding: 32px 64px;
     }
 `;
 

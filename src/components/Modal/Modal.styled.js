@@ -106,11 +106,19 @@ export const ButtonsContainer = styled.div`
 
 export const FlexContainer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content:space-between;
-    gap: 24px;
-    margin-right: 24px;
+    gap: 44px;
+
+    @media (min-width: ${theme.breakpoint.md}) {
+        flex-direction: row;
+        margin-right: 24px;
+        gap: 24px;
+    }
 `;
 
 export const DetailsContainer = styled.div`
     max-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
 `;
