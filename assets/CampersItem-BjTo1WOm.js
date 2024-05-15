@@ -1,4 +1,4 @@
-import{u as E,t as $,b as jn,r as Ce,g as Rn,c as Mn,d as Vr,T as ht,j as m,s as de,R as ue,I as ot,S as Lr,_ as Nn,e as Pn,a as Vn,f as Ln,h as Un}from"./index-qx-mB2qL.js";const oa=E.form`
+import{u as E,t as $,b as jn,r as Ce,g as Rn,c as Mn,d as Vr,T as ht,j as m,s as de,R as ue,I as ot,S as Lr,_ as Nn,e as Pn,a as Vn,f as Ln,h as Un}from"./index-D-CwsA15.js";const oa=E.form`
     width: auto;
 
     @media (min-width: ${$.breakpoint.xl}) {
@@ -57,6 +57,10 @@ import{u as E,t as $,b as jn,r as Ce,g as Rn,c as Mn,d as Vr,T as ht,j as m,s as
 `,ma=E.input`
     opacity: 0;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 95px;
+    width: 112px;
     cursor: pointer;
 `,ya=E.p`
     color: ${$.color.dark};

@@ -1,6 +1,6 @@
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/CatalogPage-biP9HcsX.js","assets/CampersItem-8JRCDDnm.js","assets/FavoritesPage-CB3KRVRX.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/CatalogPage-DHAm6FQM.js","assets/CampersItem-BjTo1WOm.js","assets/FavoritesPage-8qGq1hoY.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
@@ -428,7 +428,7 @@ to {
   > * {
     pointer-events: auto;
   }
-`,Ho=16,ew=({reverseOrder:e,position:t="top-center",toastOptions:n,gutter:r,children:o,containerStyle:i,containerClassName:l})=>{let{toasts:u,handlers:s}=R1(n);return _.createElement("div",{style:{position:"fixed",zIndex:9999,top:Ho,left:Ho,right:Ho,bottom:Ho,pointerEvents:"none",...i},className:l,onMouseEnter:s.startPause,onMouseLeave:s.endPause},u.map(a=>{let c=a.position||t,f=s.calculateOffset(a,{reverseOrder:e,gutter:r,defaultPosition:t}),p=J1(c,f);return _.createElement(Z1,{id:a.id,key:a.id,onHeightUpdate:s.updateHeight,className:a.visible?q1:"",style:p},a.type==="custom"?Yi(a.message,a):o?o(a):_.createElement(X1,{toast:a,position:c}))}))},wx=Te;const Nf=_.lazy(()=>$a(()=>import("./HomePage-I00UMNHo.js"),__vite__mapDeps([]))),tw=_.lazy(()=>$a(()=>import("./CatalogPage-biP9HcsX.js"),__vite__mapDeps([0,1]))),nw=_.lazy(()=>$a(()=>import("./FavoritesPage-CB3KRVRX.js"),__vite__mapDeps([2,1])));function rw(){return N.jsxs(N.Fragment,{children:[N.jsx(_.Suspense,{fallback:N.jsx("p",{children:"LOADING..."}),children:N.jsx(Bg,{children:N.jsxs(Nn,{path:"/",element:N.jsx(c1,{}),children:[N.jsx(Nn,{index:!0,element:N.jsx(Nf,{})}),N.jsx(Nn,{path:"catalog",element:N.jsx(tw,{})}),N.jsx(Nn,{path:"favorites",element:N.jsx(nw,{})}),N.jsx(Nn,{path:"*",element:N.jsx(Nf,{})})]})})}),N.jsx(ew,{position:"top-right"}),N.jsx(X0,{})]})}var Xh={exports:{}},Zh={};/**
+`,Ho=16,ew=({reverseOrder:e,position:t="top-center",toastOptions:n,gutter:r,children:o,containerStyle:i,containerClassName:l})=>{let{toasts:u,handlers:s}=R1(n);return _.createElement("div",{style:{position:"fixed",zIndex:9999,top:Ho,left:Ho,right:Ho,bottom:Ho,pointerEvents:"none",...i},className:l,onMouseEnter:s.startPause,onMouseLeave:s.endPause},u.map(a=>{let c=a.position||t,f=s.calculateOffset(a,{reverseOrder:e,gutter:r,defaultPosition:t}),p=J1(c,f);return _.createElement(Z1,{id:a.id,key:a.id,onHeightUpdate:s.updateHeight,className:a.visible?q1:"",style:p},a.type==="custom"?Yi(a.message,a):o?o(a):_.createElement(X1,{toast:a,position:c}))}))},wx=Te;const Nf=_.lazy(()=>$a(()=>import("./HomePage-CoHklpPs.js"),__vite__mapDeps([]))),tw=_.lazy(()=>$a(()=>import("./CatalogPage-DHAm6FQM.js"),__vite__mapDeps([0,1]))),nw=_.lazy(()=>$a(()=>import("./FavoritesPage-8qGq1hoY.js"),__vite__mapDeps([2,1])));function rw(){return N.jsxs(N.Fragment,{children:[N.jsx(_.Suspense,{fallback:N.jsx("p",{children:"LOADING..."}),children:N.jsx(Bg,{children:N.jsxs(Nn,{path:"/",element:N.jsx(c1,{}),children:[N.jsx(Nn,{index:!0,element:N.jsx(Nf,{})}),N.jsx(Nn,{path:"catalog",element:N.jsx(tw,{})}),N.jsx(Nn,{path:"favorites",element:N.jsx(nw,{})}),N.jsx(Nn,{path:"*",element:N.jsx(Nf,{})})]})})}),N.jsx(ew,{position:"top-right"}),N.jsx(X0,{})]})}var Xh={exports:{}},Zh={};/**
  * @license React
  * use-sync-external-store-with-selector.production.min.js
  *
