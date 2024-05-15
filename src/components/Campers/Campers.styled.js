@@ -79,6 +79,10 @@ export const Checkbox = styled.div`
 export const HiddenCheckbox = styled.input`
     opacity: 0;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 95px;
+    width: 112px;
     cursor: pointer;
 `
 

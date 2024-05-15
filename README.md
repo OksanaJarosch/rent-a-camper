@@ -1,6 +1,6 @@
 # Camper Rental Service
 
-This React application is designed to help users browse and book camper rentals through a user-friendly interface. The application consists of three main pages.
+This React application is developed to help users browse and book camper rentals through a user-friendly interface. The application consists of three main pages.
 
 ![Catalog Page](/src/assets/rent_a_camper.webp)
 
